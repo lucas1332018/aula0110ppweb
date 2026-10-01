@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbosa Tech</title>
-    <meta name="description" content="Barbosa Tech — controle de acesso, anticheat e banco de dados. Fornecemos anticheat para empresas de jogos.">
+    <meta name="description" content="Barbosa Tech — controle de acesso, anticheat e banco de dados. Proteção para jogos mobile (Android e iOS): anticheat e antitamper, além de controle de acesso e banco de dados.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -236,8 +236,8 @@
         /* ===== Serviços ===== */
         .servicos {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 56px;
         }
 
         .servico {
@@ -477,7 +477,7 @@
             </a>
             <div class="nav-links">
                 <a href="#servicos">Serviços</a>
-                <a href="#anticheat">Anticheat</a>
+                <a href="#protect">Barbosa Protect</a>
                 <a href="#sobre">Sobre</a>
                 <a class="cta" href="#contato">Contato</a>
             </div>
@@ -486,12 +486,13 @@
 
     <header class="hero" id="inicio">
         <div class="hero-inner">
-            <p class="eyebrow">Controle de acesso · Anticheat · Banco de dados</p>
-            <h1>Infraestrutura e segurança para sistemas e jogos online</h1>
+            <p class="eyebrow">Anticheat · Antitamper · Controle de acesso · Banco de dados</p>
+            <h1>Proteção para jogos mobile, do cliente ao servidor</h1>
             <p class="sub">
-                A Barbosa Tech projeta e opera soluções de controle de acesso, detecção de
-                trapaças e administração de banco de dados. Trabalhamos com empresas de jogos
-                que precisam manter suas comunidades íntegras e seus dados protegidos.
+                A Barbosa Tech protege jogos para Android e iOS com o Barbosa Protect,
+                nosso kit de anticheat e antitamper, além de soluções de controle de
+                acesso e banco de dados. Trabalhamos com empresas de jogos que precisam
+                manter suas comunidades íntegras e seus dados protegidos.
             </p>
             <div class="hero-actions">
                 <a class="btn btn-primary" href="#contato">Solicitar proposta</a>
@@ -508,8 +509,8 @@
                     <div class="rotulo">Jogadores em comunidades atendidas</div>
                 </div>
                 <div class="fato">
-                    <div class="valor">3 frentes</div>
-                    <div class="rotulo">Acesso, anticheat e dados</div>
+                    <div class="valor">Android · iOS</div>
+                    <div class="rotulo">Plataformas mobile protegidas</div>
                 </div>
             </div>
         </div>
@@ -520,22 +521,14 @@
             <div class="secao-head">
                 <h2>Serviços</h2>
                 <p>
-                    Três áreas de atuação que se complementam: quem acessa o sistema,
-                    como ele se comporta e onde os dados ficam guardados.
+                    Quatro áreas de atuação que se complementam: o cliente do jogo, o
+                    comportamento dos jogadores, quem acessa o sistema e onde os dados
+                    ficam guardados.
                 </p>
             </div>
             <div class="servicos">
                 <div class="servico">
                     <div class="num">01</div>
-                    <h3>Controle de acesso</h3>
-                    <p>
-                        Autenticação, autorização e gestão de identidades para sistemas e
-                        aplicações. Definimos quem entra, o que pode fazer e registramos
-                        tudo em trilhas de auditoria.
-                    </p>
-                </div>
-                <div class="servico">
-                    <div class="num">02</div>
                     <h3>Anticheat</h3>
                     <p>
                         Detecção e bloqueio de trapaças em jogos online, com validação no
@@ -544,7 +537,25 @@
                     </p>
                 </div>
                 <div class="servico">
+                    <div class="num">02</div>
+                    <h3>Antitamper</h3>
+                    <p>
+                        Proteção do cliente do jogo em Android e iOS contra modificações.
+                        Um cliente adulterado é detectado na inicialização e simplesmente
+                        não abre.
+                    </p>
+                </div>
+                <div class="servico">
                     <div class="num">03</div>
+                    <h3>Controle de acesso</h3>
+                    <p>
+                        Autenticação, autorização e gestão de identidades para sistemas e
+                        aplicações. Definimos quem entra, o que pode fazer e registramos
+                        tudo em trilhas de auditoria.
+                    </p>
+                </div>
+                <div class="servico">
+                    <div class="num">04</div>
                     <h3>Banco de dados</h3>
                     <p>
                         Modelagem, administração e otimização de MongoDB, Redis e bancos
@@ -556,17 +567,20 @@
         </div>
     </section>
 
-    <section id="anticheat">
+    <section id="protect">
         <div class="container">
             <div class="anticheat-grid">
                 <div class="anticheat-texto">
-                    <h2>Anticheat para empresas de jogos</h2>
+                    <h2>Barbosa Protect: anticheat e antitamper para jogos mobile</h2>
                     <p>
-                        Trapaça esvazia servidores. Nossa solução atua do lado do servidor,
-                        onde o cheater não tem controle, analisando tráfego e comportamento
-                        dos jogadores em tempo real.
+                        Trapaça esvazia servidores. O Barbosa Protect combina duas camadas:
+                        o antitamper blinda o cliente do jogo em Android e iOS — um cliente
+                        modificado nem chega a abrir — e o anticheat atua do lado do
+                        servidor, onde o cheater não tem controle, analisando tráfego e
+                        comportamento dos jogadores em tempo real.
                     </p>
                     <ul class="lista">
+                        <li>Antitamper: cliente adulterado é bloqueado antes de iniciar</li>
                         <li>Validação no servidor de movimentação, dano e economia do jogo</li>
                         <li>Detecção de aimbot, speedhack e injeção por análise de padrões</li>
                         <li>Banimento automatizado com painel de revisão manual</li>
@@ -576,15 +590,16 @@
                 </div>
                 <div class="painel" aria-label="Exemplo de painel de monitoramento">
                     <div class="painel-head">
-                        <span>barbosa-anticheat v2.4</span>
+                        <span>barbosa-protect v2.4</span>
                         <span class="status">online</span>
                     </div>
                     <div class="painel-corpo">
+                        <div class="linha"><span>plataformas</span><span>Android · iOS</span></div>
                         <div class="linha"><span>jogadores monitorados</span><span>12 482</span></div>
-                        <div class="linha"><span>validação servidor-side</span><span class="pos">ativa</span></div>
+                        <div class="linha"><span>antitamper</span><span class="pos">ativo</span></div>
+                        <div class="linha"><span>cliente modificado #1193</span><span class="neg">bloqueado</span></div>
                         <div class="linha"><span>player #8841 — speedhack</span><span class="neg">banido</span></div>
                         <div class="linha"><span>player #2190 — padrão suspeito</span><span class="atencao">em análise</span></div>
-                        <div class="linha"><span>falsos positivos (30 dias)</span><span>0,2%</span></div>
                         <div class="linha"><span>latência média</span><span>4 ms</span></div>
                     </div>
                 </div>
@@ -619,8 +634,9 @@
                 <div>
                     <h2>Vamos conversar sobre o seu projeto</h2>
                     <p>
-                        Conte o que você precisa — controle de acesso, anticheat para o seu
-                        jogo ou consultoria em banco de dados — e montamos uma proposta.
+                        Conte o que você precisa — o Barbosa Protect para o seu jogo,
+                        controle de acesso ou consultoria em banco de dados — e montamos
+                        uma proposta.
                     </p>
                 </div>
                 <a class="btn btn-primary" href="https://discord.gg/barbosaproject" target="_blank" rel="noopener">
