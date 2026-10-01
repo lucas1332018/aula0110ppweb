@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Barbosa — Currículo</title>
+    <title>Barbosa Tech</title>
+    <meta name="description" content="Barbosa Tech — tecnologia em controle de acesso, anticheat e banco de dados. Fornecemos anticheat para empresas de jogos.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #1b2a41;
-            --navy-dark: #12203a;
-            --accent: #2e6f95;
-            --accent-light: #e8f1f6;
-            --text: #2d333a;
-            --text-muted: #5f6b76;
-            --bg: #f4f6f8;
-            --card: #ffffff;
-            --border: #e2e8ee;
+            /* Paleta extraída da logo / banner do canal */
+            --azul-royal: #1e3fd8;      /* azul do banner */
+            --azul-royal-escuro: #152db0;
+            --azul-claro: #1e8fd5;      /* azul do "B" da logo */
+            --amarelo: #f5e642;         /* amarelo do texto BARBOSA TECH */
+            --preto: #0b0d14;           /* fundo escuro */
+            --preto-card: #12152091;
+            --borda: #232a45;
+            --branco: #ffffff;
+            --texto: #e8eaf2;
+            --texto-suave: #a3abc4;
         }
 
         * {
@@ -26,381 +29,743 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+            background-color: var(--preto);
+            color: var(--texto);
+            line-height: 1.65;
         }
 
-        .page {
-            max-width: 860px;
+        .container {
+            max-width: 1100px;
             margin: 0 auto;
-            background: var(--card);
-            box-shadow: 0 2px 24px rgba(27, 42, 65, 0.10);
+            padding: 0 24px;
         }
 
-        /* ===== Cabeçalho ===== */
-        header {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
-            color: #fff;
-            padding: 48px 48px 40px;
+        h1, h2, h3 {
+            font-family: 'Sora', 'Inter', sans-serif;
+        }
+
+        /* ===== Navegação ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(11, 13, 20, 0.88);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--borda);
+        }
+
+        .nav-inner {
             display: flex;
             align-items: center;
-            gap: 32px;
+            justify-content: space-between;
+            padding: 14px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand-name {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+            color: var(--branco);
+        }
+
+        .brand-name span {
+            color: var(--amarelo);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--texto-suave);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--branco);
+        }
+
+        .nav-links a.destaque {
+            color: var(--preto);
+            background: var(--amarelo);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+
+        .nav-links a.destaque:hover {
+            filter: brightness(1.08);
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse 70% 60% at 75% 20%, rgba(30, 63, 216, 0.35), transparent 70%),
+                radial-gradient(ellipse 50% 50% at 15% 85%, rgba(30, 143, 213, 0.18), transparent 70%),
+                var(--preto);
+            border-bottom: 1px solid var(--borda);
+        }
+
+        .hero-inner {
+            padding: 96px 24px 110px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero .tag {
+            display: inline-block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--amarelo);
+            border: 1px solid rgba(245, 230, 66, 0.35);
+            background: rgba(245, 230, 66, 0.08);
+            padding: 6px 14px;
+            border-radius: 999px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.1rem, 5vw, 3.3rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--branco);
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--azul-claro);
+        }
+
+        .hero p.lead {
+            margin-top: 20px;
+            font-size: 1.12rem;
+            color: var(--texto-suave);
+            max-width: 540px;
+        }
+
+        .hero-actions {
+            margin-top: 34px;
+            display: flex;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
-        .profile-photo {
-            width: 128px;
-            height: 128px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.35);
-            flex-shrink: 0;
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 14px 28px;
+            border-radius: 10px;
+            transition: transform 0.15s, filter 0.2s;
         }
 
-        .profile-initials {
-            width: 128px;
-            height: 128px;
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        .btn-azul {
+            background: linear-gradient(135deg, var(--azul-royal), var(--azul-royal-escuro));
+            color: var(--branco);
+            box-shadow: 0 8px 28px rgba(30, 63, 216, 0.4);
+        }
+
+        .btn-contorno {
+            border: 1.5px solid var(--borda);
+            color: var(--texto);
+        }
+
+        .btn-contorno:hover {
+            border-color: var(--azul-claro);
+            color: var(--branco);
+        }
+
+        /* Logo grande do hero */
+        .hero-logo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo-circulo {
+            width: min(280px, 60vw);
+            aspect-ratio: 1;
             border-radius: 50%;
-            border: 3px solid rgba(255, 255, 255, 0.35);
-            background: var(--accent);
-            display: none;
+            background: var(--branco);
+            display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Lora', Georgia, serif;
-            font-size: 2.6rem;
-            font-weight: 700;
-            flex-shrink: 0;
+            border: 8px solid #c7d4e2;
+            box-shadow:
+                0 0 0 10px rgba(30, 143, 213, 0.12),
+                0 20px 60px rgba(30, 63, 216, 0.45);
         }
 
-        .header-info h1 {
-            font-family: 'Lora', Georgia, serif;
-            font-size: 2.2rem;
-            font-weight: 700;
+        .logo-circulo svg {
+            width: 58%;
+            height: 58%;
+        }
+
+        /* ===== Faixa de destaque ===== */
+        .faixa {
+            background: var(--azul-royal);
+            color: var(--branco);
+            font-weight: 600;
+            text-align: center;
+            padding: 14px 24px;
+            font-size: 0.98rem;
             letter-spacing: 0.3px;
         }
 
-        .header-info .role {
+        .faixa strong {
+            color: var(--amarelo);
+        }
+
+        /* ===== Seções ===== */
+        section {
+            padding: 88px 0;
+        }
+
+        .secao-titulo {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 56px;
+        }
+
+        .secao-titulo .tag {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--azul-claro);
+            margin-bottom: 12px;
+        }
+
+        .secao-titulo h2 {
+            font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+            color: var(--branco);
+            font-weight: 800;
+        }
+
+        .secao-titulo p {
+            margin-top: 14px;
+            color: var(--texto-suave);
             font-size: 1.05rem;
-            font-weight: 500;
-            color: #b8cde0;
-            margin-top: 4px;
         }
 
-        .contact {
-            margin-top: 16px;
+        /* ===== Cards de serviços ===== */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(30, 63, 216, 0.08), rgba(18, 21, 32, 0.6));
+            border: 1px solid var(--borda);
+            border-radius: 16px;
+            padding: 34px 28px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--azul-claro);
+        }
+
+        .card .icone {
+            width: 54px;
+            height: 54px;
+            border-radius: 12px;
+            background: rgba(30, 143, 213, 0.14);
+            border: 1px solid rgba(30, 143, 213, 0.35);
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px 24px;
-            font-size: 0.92rem;
-            color: #d7e2ec;
-        }
-
-        .contact a {
-            color: #d7e2ec;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(215, 226, 236, 0.4);
-        }
-
-        .contact a:hover {
-            color: #fff;
-            border-bottom-color: #fff;
-        }
-
-        /* ===== Conteúdo ===== */
-        main {
-            padding: 40px 48px 48px;
-        }
-
-        section + section {
-            margin-top: 36px;
-        }
-
-        h2 {
-            font-family: 'Lora', Georgia, serif;
-            font-size: 1.3rem;
-            color: var(--navy);
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--accent);
+            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
         }
 
-        .summary p {
-            color: var(--text);
-            font-size: 1rem;
+        .card .icone svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--azul-claro);
         }
 
-        /* ===== Experiência ===== */
-        .job {
-            padding-left: 20px;
-            border-left: 3px solid var(--accent-light);
+        .card h3 {
+            font-size: 1.2rem;
+            color: var(--branco);
+            font-weight: 700;
+            margin-bottom: 10px;
         }
 
-        .job + .job {
-            margin-top: 28px;
+        .card p {
+            color: var(--texto-suave);
+            font-size: 0.97rem;
         }
 
-        .job-header {
+        /* ===== Seção Anticheat (destaque B2B) ===== */
+        .anticheat {
+            background:
+                radial-gradient(ellipse 60% 80% at 85% 50%, rgba(30, 63, 216, 0.25), transparent 70%),
+                #0e1119;
+            border-top: 1px solid var(--borda);
+            border-bottom: 1px solid var(--borda);
+        }
+
+        .anticheat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .anticheat h2 {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            color: var(--branco);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .anticheat h2 em {
+            font-style: normal;
+            color: var(--amarelo);
+        }
+
+        .anticheat p {
+            margin-top: 16px;
+            color: var(--texto-suave);
+            font-size: 1.03rem;
+        }
+
+        .anticheat ul {
+            margin-top: 24px;
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+
+        .anticheat li {
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 4px 16px;
+            gap: 12px;
+            align-items: flex-start;
+            color: var(--texto);
+            font-size: 0.99rem;
         }
 
-        .job-title {
-            font-size: 1.08rem;
-            font-weight: 600;
-            color: var(--navy);
+        .anticheat li::before {
+            content: "✔";
+            color: var(--amarelo);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
         }
 
-        .job-company {
-            font-weight: 500;
-            color: var(--accent);
-        }
-
-        .job p {
-            margin-top: 8px;
-            color: var(--text);
-        }
-
-        .job ul {
-            margin: 10px 0 0 20px;
-            color: var(--text);
-        }
-
-        .job li {
-            margin-bottom: 6px;
-        }
-
-        .job .note {
-            margin-top: 12px;
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            background: var(--accent-light);
-            padding: 10px 14px;
-            border-radius: 6px;
-        }
-
-        .job a {
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        /* ===== Habilidades ===== */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill {
-            background: var(--accent-light);
-            color: var(--navy);
+        .painel {
+            background: var(--preto-card);
+            border: 1px solid var(--borda);
+            border-radius: 16px;
+            padding: 28px;
+            font-family: 'Consolas', 'Menlo', monospace;
             font-size: 0.88rem;
-            font-weight: 500;
-            padding: 6px 14px;
-            border-radius: 999px;
-            border: 1px solid var(--border);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
         }
 
-        /* ===== Formação ===== */
-        .edu {
+        .painel .painel-top {
+            display: flex;
+            gap: 7px;
+            margin-bottom: 18px;
+        }
+
+        .painel .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--borda);
+        }
+
+        .painel .dot:first-child { background: #e05555; }
+        .painel .dot:nth-child(2) { background: var(--amarelo); }
+        .painel .dot:nth-child(3) { background: #3ecf7a; }
+
+        .painel .linha {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 4px 16px;
-            padding: 14px 0;
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(35, 42, 69, 0.6);
+            color: var(--texto-suave);
         }
 
-        .edu + .edu {
-            border-top: 1px solid var(--border);
+        .painel .linha:last-child {
+            border-bottom: none;
         }
 
-        .edu-course {
-            font-weight: 600;
-            color: var(--navy);
+        .painel .ok { color: #3ecf7a; font-weight: 700; }
+        .painel .alerta { color: var(--amarelo); font-weight: 700; }
+        .painel .bloqueado { color: #e05555; font-weight: 700; }
+
+        /* ===== Números ===== */
+        .numeros {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            text-align: center;
         }
 
-        .edu-school {
-            color: var(--text-muted);
+        .numero {
+            padding: 30px 16px;
+            border: 1px solid var(--borda);
+            border-radius: 16px;
+            background: rgba(18, 21, 32, 0.5);
+        }
+
+        .numero .valor {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--azul-claro);
+        }
+
+        .numero .rotulo {
+            margin-top: 6px;
+            color: var(--texto-suave);
             font-size: 0.95rem;
         }
 
-        .edu-status {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--accent);
-            background: var(--accent-light);
-            padding: 3px 12px;
-            border-radius: 999px;
-            white-space: nowrap;
-        }
-
-        footer {
+        /* ===== Contato ===== */
+        .contato-box {
+            background: linear-gradient(135deg, var(--azul-royal), var(--azul-royal-escuro));
+            border-radius: 20px;
+            padding: 60px 40px;
             text-align: center;
-            padding: 20px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border);
+            box-shadow: 0 24px 60px rgba(30, 63, 216, 0.35);
         }
 
-        @media (max-width: 600px) {
-            header {
-                padding: 32px 24px;
-                flex-direction: column;
+        .contato-box h2 {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            color: var(--branco);
+            font-weight: 800;
+        }
+
+        .contato-box p {
+            margin-top: 12px;
+            color: #cdd6ff;
+            font-size: 1.05rem;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contato-box .btn-amarelo {
+            margin-top: 30px;
+            background: var(--amarelo);
+            color: var(--preto);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ===== Rodapé ===== */
+        footer {
+            border-top: 1px solid var(--borda);
+            padding: 36px 24px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            color: var(--texto-suave);
+            font-size: 0.9rem;
+        }
+
+        .footer-inner a {
+            color: var(--azul-claro);
+            text-decoration: none;
+        }
+
+        .footer-inner a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Responsivo ===== */
+        @media (max-width: 860px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                padding: 64px 24px 72px;
                 text-align: center;
             }
 
-            .contact {
+            .hero p.lead {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
                 justify-content: center;
             }
 
-            main {
-                padding: 28px 24px 36px;
-            }
-        }
-
-        @media print {
-            body {
-                background: #fff;
+            .hero-logo {
+                order: -1;
             }
 
-            .page {
-                box-shadow: none;
-                max-width: 100%;
+            .cards,
+            .numeros {
+                grid-template-columns: 1fr;
+            }
+
+            .anticheat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links a:not(.destaque) {
+                display: none;
+            }
+
+            section {
+                padding: 64px 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="page">
-        <header>
-            <img class="profile-photo" src="imagem/logo.jpg" alt="Foto de Lucas Barbosa"
-                 onerror="this.style.display='none'; document.getElementById('initials').style.display='flex';">
-            <div class="profile-initials" id="initials">LB</div>
-            <div class="header-info">
-                <h1>Lucas Barbosa</h1>
-                <p class="role">Desenvolvedor Back-end &nbsp;·&nbsp; Técnico em Eletrônica</p>
-                <div class="contact">
-                    <span>📧 <a href="mailto:lucas.barbosa@aluno.fmpsc.edu.br">lucas.barbosa@aluno.fmpsc.edu.br</a></span>
-                    <span>📱 (48) 95566-7788</span>
-                    <span>📍 Palhoça, SC</span>
+
+    <!-- SVG da logo: "B" com hachura, reutilizado na nav e no hero -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <pattern id="hachura" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(45)">
+                <rect width="7" height="7" fill="#1e8fd5"/>
+                <line x1="0" y1="0" x2="0" y2="7" stroke="#ffffff" stroke-width="1.6" opacity="0.55"/>
+            </pattern>
+            <g id="logo-b">
+                <text x="50" y="76" text-anchor="middle"
+                      font-family="Sora, Arial Black, sans-serif" font-weight="800" font-size="88"
+                      fill="url(#hachura)" stroke="#1e8fd5" stroke-width="2">B</text>
+            </g>
+        </defs>
+    </svg>
+
+    <nav>
+        <div class="nav-inner">
+            <a class="brand" href="#inicio">
+                <svg width="40" height="40" viewBox="0 0 100 100" aria-label="Logo Barbosa Tech">
+                    <circle cx="50" cy="50" r="48" fill="#ffffff" stroke="#c7d4e2" stroke-width="4"/>
+                    <use href="#logo-b"/>
+                </svg>
+                <span class="brand-name">BARBOSA <span>TECH</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="#servicos">Serviços</a>
+                <a href="#anticheat">Anticheat</a>
+                <a href="#sobre">Sobre</a>
+                <a class="destaque" href="#contato">Fale conosco</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <div class="hero-inner">
+            <div>
+                <span class="tag">Segurança · Infraestrutura · Dados</span>
+                <h1>Tecnologia que <em>protege</em> o seu negócio e o seu jogo</h1>
+                <p class="lead">
+                    A Barbosa Tech é especializada em controle de acesso, soluções anticheat
+                    e banco de dados. Protegemos sistemas, dados e comunidades de jogadores
+                    com infraestrutura robusta e monitoramento em tempo real.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-azul" href="#contato">Solicitar proposta</a>
+                    <a class="btn btn-contorno" href="#servicos">Conhecer serviços</a>
                 </div>
             </div>
-        </header>
+            <div class="hero-logo">
+                <div class="logo-circulo">
+                    <svg viewBox="0 0 100 100" aria-hidden="true">
+                        <use href="#logo-b"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <main>
-            <section class="summary">
-                <h2>Resumo Profissional</h2>
-                <p>
-                    Estudante de Análise e Desenvolvimento de Sistemas com experiência prática em
-                    infraestrutura de servidores e desenvolvimento back-end. Fundador da Barbosa Tech,
-                    projeto no qual arquitetei e mantenho um servidor de jogo privado com integrações
-                    entre múltiplos protocolos de rede (TCP, UDP, HTTPS), APIs e bancos de dados
-                    (MongoDB, Redis). Experiência anterior como Técnico em Eletrônica, com vivência em
-                    manutenção e instalação de equipamentos de campo. Perfil autodidata, com domínio de
-                    ferramentas de desenvolvimento assistido por IA para acelerar entregas.
-                </p>
-            </section>
+    <div class="faixa">
+        Fornecemos <strong>anticheat</strong> para empresas de jogos — jogo limpo para a sua comunidade.
+    </div>
 
-            <section>
-                <h2>Experiência Profissional</h2>
-
-                <div class="job">
-                    <div class="job-header">
-                        <span class="job-title">Fundador e Desenvolvedor <span class="job-company">· Barbosa Tech</span></span>
-                        <span class="edu-school">Projeto próprio</span>
+    <section id="servicos">
+        <div class="container">
+            <div class="secao-titulo">
+                <span class="tag">O que fazemos</span>
+                <h2>Nossos serviços</h2>
+                <p>Três frentes de atuação, um só objetivo: sistemas seguros, rápidos e confiáveis.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="icone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="11" width="14" height="10" rx="2"/>
+                            <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+                            <circle cx="12" cy="16" r="1.5"/>
+                        </svg>
                     </div>
+                    <h3>Controle de Acesso</h3>
                     <p>
-                        Criador e mantenedor de um dos maiores servidores privados de Free Fire do Brasil,
-                        responsável por toda a arquitetura, infraestrutura e operação do projeto, atendendo
-                        uma comunidade ativa de jogadores.
+                        Autenticação, autorização e gestão de identidades para sistemas e
+                        aplicações. Controle quem entra, quando entra e o que pode fazer —
+                        com trilhas de auditoria completas.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="icone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>Anticheat</h3>
+                    <p>
+                        Detecção e bloqueio de trapaças para jogos online. Análise de
+                        comportamento, validação servidor-side e banimento automatizado
+                        para manter a competição justa.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="icone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="12" cy="5" rx="8" ry="3"/>
+                            <path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/>
+                            <path d="M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/>
+                        </svg>
+                    </div>
+                    <h3>Banco de Dados</h3>
+                    <p>
+                        Modelagem, administração e otimização de bancos de dados
+                        (MongoDB, Redis e SQL). Dados persistentes, cache de baixa
+                        latência e backups que funcionam de verdade.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="anticheat" id="anticheat">
+        <div class="container">
+            <div class="anticheat-grid">
+                <div>
+                    <span class="tag" style="color: var(--azul-claro); font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">Para empresas de jogos</span>
+                    <h2>Anticheat sob medida para o <em>seu jogo</em></h2>
+                    <p>
+                        Trapaça destrói comunidades. Nossa solução anticheat atua direto no
+                        servidor, analisando o tráfego e o comportamento dos jogadores em
+                        tempo real — sem depender apenas do cliente, onde o cheater tem o controle.
                     </p>
                     <ul>
-                        <li>
-                            Arquitetura de um ecossistema distribuído integrando múltiplos protocolos:
-                            servidores <strong>TCP</strong> e <strong>UDP</strong> para comunicação em tempo
-                            real do jogo, e <strong>HTTPS/APIs REST</strong> para autenticação, contas e
-                            serviços auxiliares.
-                        </li>
-                        <li>
-                            Modelagem e administração de persistência de dados com <strong>MongoDB</strong>
-                            (contas, inventários e progressão dos jogadores) e <strong>Redis</strong> para
-                            cache e dados de sessão de baixa latência.
-                        </li>
-                        <li>
-                            Engenharia reversa e análise de tráfego de rede para implementar a comunicação
-                            cliente-servidor de forma compatível com o protocolo original do jogo.
-                        </li>
-                        <li>
-                            Operação do servidor em produção: deploy, monitoramento, correção de falhas e
-                            atendimento à comunidade via Discord.
-                        </li>
-                        <li>
-                            Uso intensivo de <strong>ferramentas de IA</strong> como apoio ao
-                            desenvolvimento, acelerando a implementação e o aprendizado das tecnologias
-                            envolvidas.
-                        </li>
+                        <li>Validação servidor-side de movimentação, dano e economia do jogo</li>
+                        <li>Detecção de padrões anômalos e automação (aimbot, speedhack, injeção)</li>
+                        <li>Banimento automatizado com painel de revisão manual</li>
+                        <li>Integração via API com o backend do seu jogo (TCP, UDP, REST)</li>
+                        <li>Relatórios e métricas para a sua equipe de operações</li>
                     </ul>
-                    <p class="note">
-                        🔗 Comunidade do projeto:
-                        <a href="https://discord.gg/barbosaproject" target="_blank" rel="noopener">discord.gg/barbosaproject</a>
-                    </p>
                 </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <span class="job-title">Técnico em Eletrônica <span class="job-company">· Perkons S.A.</span></span>
+                <div class="painel" aria-hidden="true">
+                    <div class="painel-top">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
                     </div>
-                    <p>
-                        Manutenção preventiva e corretiva e instalação de radares eletrônicos de
-                        fiscalização de trânsito, com atuação em campo envolvendo diagnóstico de falhas,
-                        calibração e comissionamento de equipamentos.
-                    </p>
+                    <div class="linha"><span>barbosa-anticheat v2.4</span><span class="ok">● online</span></div>
+                    <div class="linha"><span>jogadores monitorados</span><span>12.482</span></div>
+                    <div class="linha"><span>player #8841 · speedhack</span><span class="bloqueado">banido</span></div>
+                    <div class="linha"><span>player #2190 · padrão suspeito</span><span class="alerta">em análise</span></div>
+                    <div class="linha"><span>validação servidor-side</span><span class="ok">ativa</span></div>
+                    <div class="linha"><span>latência média</span><span>4 ms</span></div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <section>
-                <h2>Habilidades Técnicas</h2>
-                <div class="skills">
-                    <span class="skill">TCP / UDP</span>
-                    <span class="skill">HTTPS / APIs REST</span>
-                    <span class="skill">MongoDB</span>
-                    <span class="skill">Redis</span>
-                    <span class="skill">Arquitetura cliente-servidor</span>
-                    <span class="skill">Infraestrutura de servidores</span>
-                    <span class="skill">Desenvolvimento assistido por IA</span>
-                    <span class="skill">Eletrônica</span>
-                    <span class="skill">HTML / CSS</span>
+    <section id="sobre">
+        <div class="container">
+            <div class="secao-titulo">
+                <span class="tag">Quem somos</span>
+                <h2>Por que a Barbosa Tech?</h2>
+                <p>
+                    Nascemos dentro do mundo dos jogos online, operando infraestrutura de
+                    servidores para milhares de jogadores. Conhecemos os dois lados do campo:
+                    sabemos como o cheater pensa — e como pará-lo.
+                </p>
+            </div>
+            <div class="numeros">
+                <div class="numero">
+                    <div class="valor">24/7</div>
+                    <div class="rotulo">Monitoramento em tempo real</div>
                 </div>
-            </section>
+                <div class="numero">
+                    <div class="valor">+12 mil</div>
+                    <div class="rotulo">Jogadores em comunidade atendida</div>
+                </div>
+                <div class="numero">
+                    <div class="valor">3</div>
+                    <div class="rotulo">Frentes: acesso, anticheat e dados</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <section>
-                <h2>Formação Acadêmica</h2>
-                <div class="edu">
-                    <div>
-                        <div class="edu-course">Análise e Desenvolvimento de Sistemas</div>
-                        <div class="edu-school">FMP — Faculdade Municipal de Palhoça · Conclusão prevista: 2029</div>
-                    </div>
-                    <span class="edu-status">Em andamento</span>
-                </div>
-                <div class="edu">
-                    <div>
-                        <div class="edu-course">Ensino Médio</div>
-                        <div class="edu-school">EEB Governador Ivo Silveira · Concluído em 2023</div>
-                    </div>
-                    <span class="edu-status">Concluído</span>
-                </div>
-            </section>
-        </main>
+    <section id="contato">
+        <div class="container">
+            <div class="contato-box">
+                <h2>Vamos proteger o seu projeto?</h2>
+                <p>
+                    Conte pra gente o que você precisa — controle de acesso, anticheat para
+                    o seu jogo ou consultoria em banco de dados — e montamos uma proposta.
+                </p>
+                <a class="btn btn-amarelo" href="https://discord.gg/barbosaproject" target="_blank" rel="noopener">
+                    Chamar no Discord
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            Lucas Barbosa · Atualizado em outubro de 2025
-        </footer>
-    </div>
+    <footer>
+        <div class="footer-inner">
+            <span>© 2025 Barbosa Tech — Palhoça, SC</span>
+            <span>
+                <a href="https://youtube.com/@barbosatech" target="_blank" rel="noopener">YouTube @barbosatech</a>
+                &nbsp;·&nbsp;
+                <a href="curriculo.html">Currículo do fundador</a>
+            </span>
+        </div>
+    </footer>
+
 </body>
 </html>
